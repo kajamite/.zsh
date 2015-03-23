@@ -1,3 +1,9 @@
+Prerequisites
+------------
+
+Before installation of this zshell config you need to install [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh).
+
+
 Installation
 ------------
 
