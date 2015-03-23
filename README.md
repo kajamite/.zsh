@@ -13,4 +13,9 @@ Installation
     ln -s ~/.zsh/zshrc ~/.zshrc   
   ```
 
+  Install theme I use
+  ```zsh
+    cp ~/.zsh/themes/* ~/.oh-my-zsh/themes                        
+  ```
+
   Restart shell.
