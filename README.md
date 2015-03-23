@@ -13,8 +13,4 @@ Installation
     ln -s ~/.zsh/zshrc ~/.zshrc   
   ```
 
-  Reload config:
-
-  ```zsh
-    src
-  ```
+  Restart shell.
