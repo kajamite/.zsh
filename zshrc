@@ -1,13 +1,13 @@
 
-export ZSH=/Users/izbor/.oh-my-zsh
+export ZSH=/Users/oleh/.oh-my-zsh
 
 # use vim as the visual editor
 export VISUAL='vim'
 export EDITOR=$VISUAL
 export BUNDLER_EDITOR='vim'
 
-alias vim='mvim -v'
-alias vi='mvim -v'
+alias vim='nvim'
+alias vi='nvim'
 alias be='bundle exec'
 
 # Convenience aliases
@@ -17,7 +17,7 @@ alias la='ls -la'
 alias c='clear'
 
 alias ez='vim ~/.zshrc'
-alias ev='vim ~/.vim/vimrc'
+#alias ev='vim ~/.vim/vimrc'
 alias et='vim ~/.tmux.conf'
 alias sz='src'
 alias git=hub
@@ -59,6 +59,14 @@ function gitup {
     fi
 }
 
+export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 
 # Uncomment the following line to use case-sensitive completion.
@@ -100,11 +108,11 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git)
-plugins=(zsh_reload vundle rvm tmux rake-fast rails osx git command-not-found common-aliases compleat copydir copyfile dircycle colorize zsh-syntax-highlighting vagrant heroku brew gem gitfast)
+plugins=(zsh_reload vundle rvm rake-fast rails osx git command-not-found common-aliases compleat copydir copyfile dircycle colorize zsh-syntax-highlighting vagrant heroku brew gem gitfast)
 
 # User configuration
 
-export PATH=$PATH:"/Users/izbor/.rvm/gems/ruby-2.2.0/bin:/Users/izbor/.rvm/gems/ruby-2.2.0@global/bin:/Users/izbor/.rvm/rubies/ruby-2.2.0/bin:/Users/izbor/.nvm/v0.10.30/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/RubyMine.app/Contents/bin:/usr/local/git/bin:/usr/local/MacGPG2/bin:/Users/izbor/.rvm/gems/ruby-2.2.0/bin:/Users/izbor/.rvm/gems/ruby-2.2.0@global/bin:/Users/izbor/.rvm/rubies/ruby-2.2.0/bin:/Users/izbor/.rvm/bin"
+#export PATH=$PATH:"/Users/izbor/.rvm/gems/ruby-2.2.0/bin:/Users/izbor/.rvm/gems/ruby-2.2.0@global/bin:/Users/izbor/.rvm/rubies/ruby-2.2.0/bin:/Users/izbor/.nvm/v0.10.30/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/RubyMine.app/Contents/bin:/usr/local/git/bin:/usr/local/MacGPG2/bin:/Users/izbor/.rvm/gems/ruby-2.2.0/bin:/Users/izbor/.rvm/gems/ruby-2.2.0@global/bin:/Users/izbor/.rvm/rubies/ruby-2.2.0/bin:/Users/izbor/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -136,13 +144,3 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-# Add this to your zshrc or bzshrc file
-_not_inside_tmux() { [[ -z "$TMUX" ]] }
-
-ensure_tmux_is_running() {
-  if _not_inside_tmux; then
-    tat
-  fi
-}
-
-ensure_tmux_is_running
