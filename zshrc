@@ -10,6 +10,9 @@ alias vim='nvim'
 alias vi='nvim'
 alias be='bundle exec'
 
+# Fix zsh rake issue https://github.com/robbyrussell/oh-my-zsh/issues/433
+alias rake='noglob rake'
+
 # Convenience aliases
 alias ls="ls -FG"
 alias l='ls -l'
